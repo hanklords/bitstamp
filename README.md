@@ -1,7 +1,7 @@
 bitstamp
 ========
 
-[Bitstamp](https://www.bitstamp.net) API in ruby.
+[Bitstamp API](https://www.bitstamp.net/api/) in ruby.
 The source code is available on : <http://github.com/hanklords/bitstamp>
 
 Usage
