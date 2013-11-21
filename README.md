@@ -9,14 +9,18 @@ Usage
 
 ### Simple
 
-    require "bitstamp"
+```ruby
+require "bitstamp"
 
-    bitstamp = Bitstamp.new
-    p bitstamp.ticker
+bitstamp = Bitstamp.new
+p bitstamp.ticker
+```
 
 ### Authenticated
 
-    require "bitstamp"
+ ```ruby
+require "bitstamp"
 
-    bitstamp = Bitstamp.new *%w{CLIENT_ID KEY SECRET}
-    p bitstamp.balance
+bitstamp = Bitstamp.new *%w{CLIENT_ID KEY SECRET}
+p bitstamp.balance
+```
