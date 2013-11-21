@@ -20,7 +20,7 @@ class Bitstamp
   API_URL = 'https://www.bitstamp.net/api/'.freeze
   class APIError < StandardError; end
   
-  def initialize client_id, api_key, secret
+  def initialize(client_id = "", api_key = "", secret = "")
     @client_id, @api_key, @secret = client_id, api_key, secret
     @nonce = Time.now.to_i
   end
