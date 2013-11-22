@@ -98,7 +98,7 @@ class Bitstamp
   end
   
   def convert(h, conversion)
-    raise APIError.new(h["error"]) if h["error"]
+    raise APIError.new(h["error"]) if h.is_a?(Hash) && h["error"]
     return h unless conversion
     
     h_list = h.is_a?(Array) ? h : [h]
