@@ -41,6 +41,7 @@ class Bitstamp
   
   def self.api_method(m, options = {})
     options[:conv] ||= DEFAULT_CONV
+    options[:conv].each {|c, fields| options[:conv][c] = [fields] unless fields.respond_to? :each }
     if options[:pub]
       define_method(m) do |args = {}|
         convert(public_request(m, args), options[:conv])
