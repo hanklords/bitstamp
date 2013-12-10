@@ -54,18 +54,22 @@ class Bitstamp
   end
 
   rational = lambda {|r| Rational(r)}
+  fee = lambda {|r| Rational(r)/100}
   timeat = lambda {|t| Time.at(t.to_i)}
   datetime = lambda {|t| Time.utc *t.split(/[ :-]/)}
+  type = lambda {|t| t == 0 ? "buy" : "sell"}
   order_book = lambda {|list|
     list.map {|price, amount| [Rational(price), Rational(amount)]}
   }
   
   DEFAULT_CONV = {
-    rational => %w(price amount usd btc btc_usd fee
+    rational => %w(price amount usd btc btc_usd
       btc_reserved fee btc_available usd_reserved btc_balance usd_balance usd_available
       high last bid volume low ask),
     datetime => :datetime,
-    timeat => %w(date timestamp)
+    timeat => %w(date timestamp),
+    type => %w(type),
+    fee => %w(fee)
   }
 
   # Public Data Functions
