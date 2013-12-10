@@ -17,6 +17,7 @@ require 'httparty'
 require 'openssl'
 
 class Bitstamp
+  VERSION = "0.1"
   API_URL = 'https://www.bitstamp.net/api/'.freeze
   class APIError < StandardError; end
   
